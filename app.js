@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
@@ -16,7 +17,8 @@ mongoose.connect(dbURI)
     .catch(err => console.log(err)
 );
 
-app.get('/', (req, res) => res.render("Home"));
+app.get('/', (req, res) => res.render('home'));
+app.use(authRoutes);app.use(authRoutes);
 
 app.listen(port, () => {
     console.log(`The server is running on port ${port}...`)
