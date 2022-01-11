@@ -28,7 +28,7 @@ const handleErrors = (err) => {
 const maxAge = 2 * 24 * 60 * 60; // 3 days in seconds
 const createToken = (id) => {
     return jwt.sign({ id }, 'trusponse node auth secret', {
-        expiredIn: maxAge;
+        expiresIn: maxAge
     })
 }
 
