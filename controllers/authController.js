@@ -1,6 +1,5 @@
 const User = require("../models/User");
 const jwt = require('jsonwebtoken');
-const crypto = require('crypto');
 
 // handle errors
 const handleErrors = (err) => {
@@ -52,6 +51,14 @@ module.exports.login_get = (req, res) => {
   res.render('login');
 }
 
+module.exports.fp_get = (req, res) => {
+  res.render('forgot-password')
+}
+
+module.exports.rp_get = (req, res) => {
+  res.render('reset-password')
+}
+
 module.exports.signup_post = async (req, res) => {
   const { email, password } = req.body;
 
@@ -82,16 +89,6 @@ module.exports.login_post = async (req, res) => {
     res.status(400).json({ errors })
   }
   
-}
-
-module.exports.reset_password = (req, res) => {
-  crypto.randomBytes(32,(err, buffer)=>{
-    if(err){
-      console.log(err)
-    }
-    const token = buffer.toString("hex")
-    User.findOne({email:req.body.email})
-  })
 }
 
 module.exports.logout_get = (req, res) => {
