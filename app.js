@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // database connection
-const dbURI = 'mongodb+srv://todd_node_auth:NodeAuth470dd!@clusternodeauth.md59l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const dbURI = process.env.MONGODB_CONN
 mongoose.connect(dbURI)
     .then(() => console.log('connected to mongodb'))
     .catch(err => console.log(err)
