@@ -23,18 +23,6 @@ mongoose.connect(dbURI)
     .catch(err => console.log(err)
 );
 
-app.post('/forgot-password', (req, res, next) => {
-    
-})
-
-app.get('/reset-password', (req, res, next) => {
-    
-})
-
-app.post('/reset-password', (req, res, next) => {
-    
-})
-
 app.get("*", checkUser);
 app.get('/', (req, res) => res.render('home'));
 app.get('/protected', requireAuth, (req, res) => res.render('protected'));
