@@ -42,6 +42,8 @@ const createToken = (id) => {
     })
 }
 
+
+
 // controller actions
 module.exports.signup_get = (req, res) => {
   res.render('signup');
@@ -57,6 +59,12 @@ module.exports.fp_get = (req, res) => {
 
 module.exports.rp_get = (req, res) => {
   res.render('reset-password')
+}
+
+module.exports.fp_post = (req, res, next) => {
+  const{ email } = req.body;
+  console.log(email);
+  res.send(email);
 }
 
 module.exports.signup_post = async (req, res) => {

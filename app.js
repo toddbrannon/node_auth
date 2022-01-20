@@ -15,6 +15,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.json());
 app.use(cookieParser());
+app.use(express.urlencoded());
 
 // database connection
 const dbURI = process.env.MONGODB_CONN
