@@ -1,0 +1,20 @@
+
+
+
+Build command:
+docker build -t nodeauth.v1 .
+NOTE: 'nodeauth.v1' is the image name specific to this project 
+
+Remove perevious container build:
+rm /nodeauth.v1
+
+Spin up a container:
+docker run --name nodeauth.v1 -p 9950:3000 nodeauth.v1
+
+Run the docker container in the background:
+docker run -d -p 9950:3000 nodeauth.v1
+
+docker-compose up
+docker-compose down
+
+docker rm nodeauth:v1

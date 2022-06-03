@@ -5,11 +5,16 @@
     <!-- <img src="/smoothie.png" alt=""> -->
   </div>
   <div class="headings">
-    <h2>Node Auth</h2>
-    <h3>By TruSponse, LLC</h3>
-    <a href="/signup" class="btn">Signup</a>
-    <a href="/login" class="btn">Login</a>
-    <a href="/protected" class ="btn">Protected Route</a>
+    <h1 class="display-1">Node Auth</h1>
+    <h3>by TruSponse Solutions</h3>
+    <% if (user) { %>
+      <a href="/protected" class ="btn">Protected Route</a>
+      <a href="/logout" class="btn" >Log out</a>
+    <% } else { %>
+      <a href="/login" class="btn">Login</a>
+      <a href="/signup" class="btn">Signup</a>
+    <% } %>
+    
   </div>
 </header>
 

@@ -1,8 +1,8 @@
 /* google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap");
 
 body {
-  margin: 20px 40px;
+  margin: 20px 0px;
   font-size: 1.2rem;
   letter-spacing: 1px;
   background: #fafafa;
@@ -22,7 +22,7 @@ div,
 footer {
   margin: 0;
   padding: 0;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Noto+Sans", sans-serif;
   color: #444;
 }
 ul {
@@ -54,7 +54,22 @@ nav li a {
 }
 .btn {
   border-radius: 36px;
-  background: #fee996;
+  background: midnightblue;
+  color: #ffffff;
+}
+.btn:hover {
+  background: mediumseagreen;
+  color: white;
+}
+footer {
+  background-color: mediumseagreen;
+}
+.footer-inner{
+  font-size: .75em;
+}
+#sticky-footer {
+  position: sticky;
+  top: 100%;
 }
 form h2 {
   font-size: 2.4em;
@@ -101,6 +116,7 @@ button {
 header {
   display: flex;
   align-items: center;
+  margin:0 auto;
 }
 header img {
   width: 250px;

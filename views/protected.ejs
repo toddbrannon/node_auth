@@ -5,10 +5,14 @@
     <!-- <img src="/smoothie.png" alt=""> -->
   </div>
   <div class="headings">
-    <h2>Protected Route</h2>
-    <h3>By TruSponse, LLC</h3>
-    <a href="/signup" class="btn">Signup</a>
-    <a href="/login" class="btn">Login</a>
+    <h2>Protected Route </h2>
+    <p>(only authenticated users should be able to view this page)</p>
+    <% if (user) { %>
+      <a href="/logout" class="btn" >Log out</a>
+    <% } else { %>
+      <a href="/signup" class="btn">Signup</a>
+      <a href="/login" class="btn">Login</a>
+    <% } %>
   </div>
 </header>
 

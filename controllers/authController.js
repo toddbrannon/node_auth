@@ -3,8 +3,8 @@ const jwt = require('jsonwebtoken');
 
 // handle errors
 const handleErrors = (err) => {
-  console.log(err.message, err.code);
-  let errors = { email: '', password: '' };
+  console.log("1: " + err.message, "2: " + err.code);
+  let errors = { email: '', username: '', password: '' };
 
   // incorrect email
   if (err.message === 'incorrect email') {
@@ -19,6 +19,12 @@ const handleErrors = (err) => {
   // duplicate email error
   if (err.code === 11000) {
     errors.email = 'that email is already registered';
+    return errors;
+  }
+
+  // duplicate username error
+  if(err.code === 11000) {
+    errors.user = 'that username is already registered';
     return errors;
   }
 
@@ -51,11 +57,13 @@ module.exports.login_get = (req, res) => {
   res.render('login');
 }
 
+// Original signup_post function (January 2022)
 module.exports.signup_post = async (req, res) => {
-  const { email, password } = req.body;
+  console.log(req.body);
+  const { email, username, password } = req.body;
 
   try {
-    const user = await User.create({ email, password });
+    const user = await User.create({ email, username, password });
     const token = createToken(user._id);
     res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.status(201).json({ user: user._id });
@@ -68,6 +76,7 @@ module.exports.signup_post = async (req, res) => {
 }
 
 module.exports.login_post = async (req, res) => {
+  console.log(req.body)
   const { email, password } = req.body;
 
   try {

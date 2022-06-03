@@ -8,7 +8,7 @@
   <label for="password">Password</label>
   <input type="password" name="password" required />
   <div class="password error"></div>
-  <button>login</button>
+  <button class="btn">login</button>
 </form>
 
 <%- include('partials/footer'); -%>
@@ -36,7 +36,7 @@
         headers: { 'Content-Type': 'application/json' }
       })
       const data = await res.json();
-      console.log(data);
+      console.log("Data: " + data);
       if (data.errors){
         emailError.textContent = data.errors.email;
         passwordError.textContent = data.errors.password;
