@@ -1,7 +1,7 @@
 <%- include('partials/header'); -%>
 
 <form action="/signup">
-  <h2>Sign up</h2>
+  <h2>Sign Up</h2>
   <label for="email">Email</label>
   <input type="text" name="email" required />
   <div class="email error"></div>
@@ -11,7 +11,7 @@
   <label for="password">Password</label>
   <input type="password" name="password" required />
   <div class="password error"></div>
-  <button>Sign up</button>
+  <button>Create Account</button>
 </form>
 
 <%- include('partials/footer'); -%>
@@ -34,6 +34,7 @@
     const username = form.username.value;
     const password = form.password.value;
     
+    // Handle new user signup
     try {
       const res = await fetch('/signup', {
         method: 'POST',

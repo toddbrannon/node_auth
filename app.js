@@ -3,6 +3,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const flash = require('connect-flash');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 require('dotenv').config();
 
@@ -16,7 +18,16 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.json());
 app.use(cors());
-app.use(cookieParser());
+
+// Set Cookie Parser, Sessions, and Flash
+app.use(cookieParser('SecretStringForCookies'));
+app.use(session({
+    secret: 'trusponsenodeauth',
+    cookie: {maxAge: 60000},
+    saveUninitialized: true,
+    resave: true
+}));
+app.use(flash());
 
 // database connection
 const dbURI = process.env.MONGODB_CONN

@@ -1,6 +1,7 @@
+make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/toddbrannon/Documents/Development/Node/node_auth'
- 
-make: *** No targets.  Stop.
-
+docker rm /nodeauth.v1 && \
+	docker build -t nodeauth.v1 . && \
+	docker run --name nodeauth.v1 -p 9950:3000 nodeauth.v1
 make: Leaving directory `/Users/toddbrannon/Documents/Development/Node/node_auth'
  
