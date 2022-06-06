@@ -2,7 +2,7 @@ const User = require("../models/User");
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const sgMail = require('@sendgrid/mail')
-sgMail.setApiKey('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')
+sgMail.setApiKey(process.env.SENDGRID_APIKEY)
 
 // handle errors
 const handleErrors = (err) => {
