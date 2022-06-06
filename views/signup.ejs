@@ -1,4 +1,4 @@
-<%- include('partials/header'); -%>
+<%- include("./partials/header") %>
 
 <form action="/signup">
   <h2>Sign Up</h2>
@@ -11,10 +11,10 @@
   <label for="password">Password</label>
   <input type="password" name="password" required />
   <div class="password error"></div>
-  <button>Create Account</button>
+  <button class="btn">Create Account</button>
 </form>
 
-<%- include('partials/footer'); -%>
+<%- include("./partials/footer") %>
 
 <script>
   const form = document.querySelector('form');

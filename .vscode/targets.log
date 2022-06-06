@@ -10,14 +10,13 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Fri Jun  3 15:17:15 2022
+# Make data base, printed on Sat Jun  4 21:10:26 2022
 
 # Variables
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
- 
 ?F = $(notdir $?)
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
@@ -44,9 +43,9 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/v1/kxn5grxj431grld1223687s40000gn/T/vscode-ipc-9aabb9ec-2457-4cd4-b392-cbacb01d5088.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/v1/kxn5grxj431grld1223687s40000gn/T/vscode-ipc-1d970652-4d18-4634-986c-97680760f551.sock
 # environment
-VSCODE_CWD = /Users/toddbrannon/Documents/Development/Node/00z - Splunk/prereqchecker-react-migration
+VSCODE_CWD = /Users/toddbrannon/Documents/Development/Node/ordersponse
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
 # environment
@@ -58,7 +57,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.pjCQTwCN7Z/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.EbrqaNd3MG/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -76,11 +75,12 @@ MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /De
 # environment
 VSCODE_CLI = 1
 # environment
+ 
 VSCODE_CODE_CACHE_PATH = /Users/toddbrannon/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
 LOGNAME = toddbrannon
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 ZSH = /Users/toddbrannon/.oh-my-zsh
 # environment
@@ -102,7 +102,7 @@ USER = toddbrannon
 # makefile
 .DEFAULT_GOAL := docker-all
 # environment
-TERM_SESSION_ID = 9C3D31A5-2796-4818-B85D-011BD417C3AA
+TERM_SESSION_ID = 7F132934-8800-4FB6-9928-AE6BABCD1DC9
 # environment
 LESS = -R
 # automatic
@@ -128,7 +128,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 440
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.83419918.83419924.C64785F0-B538-4129-ABED-E2D0CF0D294A
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.83419918.83419924.FA5D9BB2-9918-42EA-B471-27D5E215F174
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -158,7 +158,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 43331
+VSCODE_PID = 4185
 # variable set hash-table stats:
 # Load=72/1024=7%, Rehash=0, Collisions=1/96=1%
 
@@ -205,8 +205,7 @@ docker-build:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-06-02 17:41:19
+#  Last modified 2022-06-04 20:53:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -249,6 +248,6 @@ docker-rm:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Jun  3 15:17:15 2022
+# Finished Make data base on Sat Jun  4 21:10:26 2022
 
  
