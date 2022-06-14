@@ -37,11 +37,17 @@ mongoose.connect(dbURI)
 );
 
 app.get("*", checkUser);
-app.get('/', (req, res) => res.render('home'));
-app.get('/protected', requireAuth, (req, res) => res.render('protected'));
+app.get('/', (req, res) => res.render('home', {
+    title: "TruSponse Node Auth",
+  })
+);
+app.get('/protected', requireAuth, (req, res) => res.render('protected', {
+    title: "TruSponse Node Auth"
+  })
+);
 app.use(authRoutes);
 
 
 app.listen(port, () => {
-    console.log(`The server is running on port ${port}...`)
+  console.log(`The server is running on port ${port}...and the SendGrip api key is SG.${process.env.SENDGRID_APIKEY}`)
 });

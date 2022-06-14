@@ -2,7 +2,7 @@ const User = require("../models/User");
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const sgMail = require('@sendgrid/mail')
-sgMail.setApiKey(process.env.SENDGRID_APIKEY)
+sgMail.setApiKey('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')
 
 // handle errors
 const handleErrors = (err) => {
@@ -53,20 +53,16 @@ const createToken = (id) => {
 
 // controller actions
 module.exports.signup_get = (req, res) => {
-  res.render('signup');
+  res.render('signup', {title: "TruSponse Node Auth"});
 }
 
 module.exports.login_get = (req, res) => {
-  res.render('login');
+  res.render('login', {title: "TruSponse Node Auth"});
 }
 
 // Handle new user signup (Jan 2022); Adding email verification (June 2022)
 module.exports.signup_post = async (req, res) => {
   console.log(req.body);
-  // const { 
-  //   email, 
-  //   username, 
-  //   password } = req.body;
   const newUser = new User({
     username: req.body.username,
     email: req.body.email,
@@ -75,38 +71,32 @@ module.exports.signup_post = async (req, res) => {
     isValidated: false
   })
   console.log("New signup email: " + newUser.email);
+  console.log("emailToken: " + newUser.emailToken);
 
   try {
     // const user = await User.create(newUser) *** MOVED TO verify_email function (6/3/22) ***
     console.log("msg try block; new user email is " + newUser.email);
+    
     const msg = {
       from: 'toddbrannon@trusponse.com',
       to: newUser.email,
       subject: 'Trusponse Solutions - verify your email',
       text: `
         Hi there! Thank you for registering at Trusponse.
-        Please copy and paste the url below to verify your account.
+        Please click the link below to verify your account.
         http://${req.headers.host}/verify-email?token=${newUser.emailToken}
         `,
         html:`
           <h1>Hi there!</h2>
-          <p>Thank you for registering at Trusponse.Thank you for registering at Trusponse.</p>
-          <p>Please copy and paste the url below to verify your account.</p>
+          <p>Thank you for registering at Trusponse.</p>
+          <p>Please click the link below to verify your account.</p>
           <a href="http://${req.headers.host}/verify-email?token=${newUser.emailToken}">Verify your account</a>
         `
     }
     try {
-      console.log("msg send try block");
       await sgMail.send(msg);
-      console.log('registration success!');
-      req.flash.message = {
-        type: 'success',
-        intro: 'Success! ',
-        message: 'Thanks for registering. Pleace check your email to verify your account. '
-      }
-      
-      res.redirect('/');
-      console.log("should have redirected");
+      req.flash.message = {type: 'success', intro: 'Success! ', message: 'Thanks for registering. Please check your email to verify your account. '}
+      res.redirect('/');  
     } catch(err){
       console.log("msg send catch block: " + err);
       req.flash('error', 'Something went wrong. Please contact support@trusponse.com for assistance.');
@@ -118,7 +108,6 @@ module.exports.signup_post = async (req, res) => {
     const errors = handleErrors(err);
     res.status(400).json({ errors });
   }
- 
 }
 
 // Handle email verification

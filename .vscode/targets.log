@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Sat Jun  4 21:10:26 2022
+# Make data base, printed on Tue Jun 14 09:31:01 2022
 
 # Variables
 
@@ -43,9 +43,9 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/v1/kxn5grxj431grld1223687s40000gn/T/vscode-ipc-1d970652-4d18-4634-986c-97680760f551.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/v1/kxn5grxj431grld1223687s40000gn/T/vscode-ipc-f45f4903-f52c-491e-9dbf-6fab8a89dc0d.sock
 # environment
-VSCODE_CWD = /Users/toddbrannon/Documents/Development/Node/ordersponse
+VSCODE_CWD = /Users/toddbrannon/Documents/Development/Node/EstateSaleManager/ESM_NoAuth
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
 # environment
@@ -68,6 +68,7 @@ PWD = /Users/toddbrannon/Documents/Development/Node/node_auth
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+ 
 # environment
 HOME = /Users/toddbrannon
 # default
@@ -75,7 +76,6 @@ MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /De
 # environment
 VSCODE_CLI = 1
 # environment
- 
 VSCODE_CODE_CACHE_PATH = /Users/toddbrannon/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
 LOGNAME = toddbrannon
@@ -102,7 +102,7 @@ USER = toddbrannon
 # makefile
 .DEFAULT_GOAL := docker-all
 # environment
-TERM_SESSION_ID = 7F132934-8800-4FB6-9928-AE6BABCD1DC9
+TERM_SESSION_ID = C8938C5C-FA7F-4A7C-A0DB-33FAB0ECB364
 # environment
 LESS = -R
 # automatic
@@ -128,7 +128,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 440
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.83419918.83419924.FA5D9BB2-9918-42EA-B471-27D5E215F174
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.83419918.83419924.ECF95DB6-D58E-4DE9-A7C2-A239A05FD175
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -168,9 +168,9 @@ VSCODE_PID = 4185
 
 # Directories
 
-# . (device 16777220, inode 72338657): 20 files, no impossibilities.
+# . (device 16777220, inode 72338657): 21 files, no impossibilities.
 
-# 20 files, no impossibilities in 1 directories.
+# 21 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -193,7 +193,7 @@ docker-build:
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 10):
 	docker build -t nodeauth.v1 . && \
-	docker run --name nodeauth.v1 -p 9950:3000 nodeauth.v1
+	docker run --name nodeauth.v1 -p 9000:3000 nodeauth.v1
 	
 
 # Not a target:
@@ -205,7 +205,7 @@ docker-build:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-04 20:53:07
+#  Last modified 2022-06-05 19:16:26
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -224,7 +224,7 @@ docker-all:
 #  commands to execute (from `Makefile', line 2):
 	docker rm /nodeauth.v1 && \
 	docker build -t nodeauth.v1 . && \
-	docker run --name nodeauth.v1 -p 9950:3000 nodeauth.v1
+	docker run --name nodeauth.v1 -p 9000:3000 nodeauth.v1
 	
 
 docker-rm:
@@ -248,6 +248,6 @@ docker-rm:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Jun  4 21:10:26 2022
+# Finished Make data base on Tue Jun 14 09:31:01 2022
 
  
