@@ -49,5 +49,5 @@ app.use(authRoutes);
 
 
 app.listen(port, () => {
-  console.log(`The server is running on port ${port}...and the SendGrip api key is SG.${process.env.SENDGRID_APIKEY}`)
+  console.log(`The server is running on port ${port}...`)
 });
