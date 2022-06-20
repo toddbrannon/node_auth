@@ -6,7 +6,11 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const flash = require('connect-flash');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
+const { configureSGMailKeys } = require('./external/sgMail.js');
 require('dotenv').config();
+
+// Configure keys
+configureSGMailKeys();
 
 const app = express();
 
